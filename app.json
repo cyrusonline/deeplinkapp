@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme":"myapp",
     "name": "Blank Template",
     "slug": "deeplink",
     "privacy": "public",

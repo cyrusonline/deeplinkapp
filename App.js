@@ -13,13 +13,15 @@ export default function App() {
 
   }, [])
   const handleUrl = event => {
-    alert(event)
-    // let redirectUrl = Linking.makeUrl("qr", { hello: "world" });
-    // alert(redirectUrl)
+    alert(JSON.stringify(event))
+    alert(JSON.stringify(event.url))
+    let redirectUrl = Linking.makeUrl("qr", { hello: "world" });
+console.log(redirectUrl)
     alert(event.url)
+    console.log('event.url',event.url)
     // Linking.openURL('http://www.google.com');
     // // this.setState({ url });
-    let { path, queryParams } = Linking.parse(url);
+    let { path, queryParams } = Linking.parse(event.url);
     console.log('path',path)
     console.log('queryParams',queryParams)
     alert(`Linked to app with path: ${path} and data: ${JSON.stringify(queryParams)}`);
